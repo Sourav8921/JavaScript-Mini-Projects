@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do</title>
+    <style>
+        .container {
+            margin-left: 600px;
+        }
+
+        #input-field {
+            padding: 10px 30px;
+            font-size: 20px;
+            border-radius: 30px;
+            border: none;
+            background-color: #ccc;
+
+        }
+
+        #myButton {
+            padding: 10px 30px;
+            font-size: 20px;
+            border-radius: 30px;
+            border: none;
+            background-color: aquamarine;
+
+
+        }
+
+        .para-styling {
+            margin-left: 30px;
+            font-size: 30px;
+            margin-top: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>To do list </h1>
+        <input type="text" id="input-field" placeholder="Add task">
+        <button id="myButton">+</button>
+        <div id="todo-container"></div>
+    </div>
+
+    <script>
+        let inputField = document.getElementById("input-field");
+        let btn = document.getElementById("myButton");
+        let todoContainer = document.getElementById("todo-container");
+
+        btn.addEventListener('click', function () {
+            let paragraph = document.createElement("li");
+            paragraph.innerText = inputField.value;
+            todoContainer.appendChild(paragraph);
+            paragraph.classList.add("para-styling");
+            inputField.value = "";
+
+            paragraph.addEventListener('click', function () {
+                paragraph.style.textDecoration = "line-through"
+            })
+
+            paragraph.addEventListener('dblclick', function () {
+                todoContainer.removeChild(paragraph);
+            })
+
+        })
+
+
+
+
+    </script>
+</body>
+
+
+
+</html>
