@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: sans-serif
+        }
+        #myButton{
+            font-size: 4rem;
+            padding: 5px 0;
+            margin: 0 10px;
+            border-radius: 50px;
+            border: none;
+            background-color: springgreen;
+        }
+        .choices{
+            margin: 20px 0;
+        }
+        #userChoice ,#computerChoice, #result{
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    
+        <h1>Rock - Paper - Scisser</h1>
+        <div class="choices">
+            <button id="myButton" onclick="start('rock')">✊</button>
+            <button id="myButton" onclick="start('paper')">🖐️</button>
+            <button id="myButton" onclick="start('scisser')">✌️</button>
+        </div>
+
+        <div id="userChoice">USER:</div>
+        <div id="computerChoice">COMPUTER:</div>
+        <div id="result"></div>
+    
+<script>
+    let choices = ['rock','paper','scissser'];
+    let userDisplay = document.getElementById("userChoice");
+    let computerDisplay = document.getElementById("computerChoice");
+    let resultDisplay = document.getElementById("result");
+
+    function start(playerChoice){
+        let computerChoice = choices[Math.floor(Math.random()*3)];
+        let result = "";
+        if(playerChoice==computerChoice){
+            result = "IT'S A TIE";
+        }  
+        else{
+            switch(playerChoice){
+                case 'rock' :
+                    result = (computerChoice=='scisser')?'YOU WIN!':'YOU LOSE';
+                    break;
+                case 'paper' :
+                    result = (computerChoice=='rock')?'YOU WIN!':'YOU LOSE';
+                    break;
+                case 'scisser' :
+                    result = (computerChoice=='paper')?'YOU WIN!':'YOU LOSE';
+                    break;
+            }
+        } 
+        
+        userDisplay.textContent = `USER: ${playerChoice}`;
+        computerDisplay.textContent = `COMPUTER: ${computerChoice}`;
+        resultDisplay.textContent = result;
+
+    }
+</script>
+</body>
+</html>
