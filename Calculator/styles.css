@@ -1,0 +1,28 @@
+.calc-container{
+    width: 500px;
+    height: 500px;
+    background: #ccc;
+    position: relative;
+    top: 50px;
+    left: 33%;
+    border: 2px solid black;
+}
+#text-field{
+  
+    width: 400px;
+    height: 50px;
+    margin: 45px;
+    font-size: 25px;
+}
+
+.row{
+    left: 45px;
+    padding-left: 45px;
+    padding-bottom: 20px;
+}
+.btn{
+    width: 84px;
+    height: 47px;
+    margin-right: 20px;
+    font-size: 20px;
+}
