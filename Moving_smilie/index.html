@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myDiv {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            font-size: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            border: 1px solid black;
+            position: relative;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv">😊</div>
+
+    <script>
+        let myDiv = document.getElementById("myDiv");
+        let x = 0;
+        let y = 0;
+        let movement = 15;
+        document.addEventListener("keydown", (event) => {
+            event.preventDefault();
+            myDiv.textContent = "😉";
+            myDiv.style.backgroundColor = "red"
+
+            switch (event.key) {
+                case "ArrowDown":
+                    x += movement;
+                    break;
+                case "ArrowUp":
+                    x -= movement;
+                    break;
+                case "ArrowLeft":
+                    y -= movement;
+                    break;
+                case "ArrowRight":
+                    y += movement;
+                    break;
+            }
+            myDiv.style.top = `${x}px`
+            myDiv.style.left = `${y}px`
+        })
+        document.addEventListener("keyup", () => {
+            myDiv.textContent = "😊";
+            myDiv.style.backgroundColor = "lightblue"
+        })
+    </script>
+</body>
+
+</html>
