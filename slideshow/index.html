@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideShow</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #slide-show {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="" alt="" height="400px" width="500px" id="slide-show">
+
+    <script>
+
+        let images = ['imageA.jpg', 'imageB.jpg', 'imageC.jpg', 'imageD.jpg'];
+        let i = 0;
+
+        function changeImg() {
+            document.getElementById("slide-show").setAttribute("src", "images/" + images[i]);
+
+            if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+        }
+        setInterval(changeImg, 2000);
+        window.onload = changeImg;
+
+    </script>
+</body>
+
+</html>
