@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font size</title>
+    <style>
+        
+        #button1{
+            font-size: 20px;
+        }
+        #button2{
+            font-size: 30px;
+        }
+        #button3{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo fugit rem maiores iure reprehenderit nihil, quae cupiditate dignissimos pariatur error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, fuga aliquam delectus maxime aliquid accusamus autem quisquam libero. Ipsam vero maxime esse similique corporis, minima officiis error. Blanditiis, id praesentium.</p>
+
+    <h2>Change Font Size</h2>
+    <button id="button1" onclick="changeSize1()">A</button>
+    <button id="button2" onclick="changeSize2()">A</button>
+    <button id="button3" onclick="changeSize3()">A</button>
+
+    <script>
+        let textLabel= document.getElementById("text");
+
+        function changeSize1(){
+            textLabel.style = "font-size : 20px"
+        }
+        function changeSize2(){
+            textLabel.style = "font-size : 30px"
+        }
+        function changeSize3(){
+            textLabel.style = "font-size : 40px"
+        }
+
+    </script>
+</body>
+</html>
